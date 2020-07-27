@@ -267,11 +267,12 @@ class TelemetryEvent {
     _customAccessToken: ?string;
 
     constructor(type: TelemetryEventType) {
-        this.type = type;
+        // Hard disabling telemetry (EA)
+        /* this.type = type;
         this.anonId = null;
         this.eventData = {};
         this.queue = [];
-        this.pendingRequest = null;
+        this.pendingRequest = null;*/
     }
 
     getStorageKey(domain: ?string) {
@@ -333,7 +334,8 @@ class TelemetryEvent {
     * to TelemetryEvent#saveData
     */
     postEvent(timestamp: number, additionalPayload: {[_: string]: any}, callback: (err: ?Error) => void, customAccessToken?: ?string) {
-        if (!config.EVENTS_URL) return;
+        // Hard disabling telemetry
+        /* if (!config.EVENTS_URL) return;
         const eventsUrlObject: UrlObject = parseUrl(config.EVENTS_URL);
         eventsUrlObject.params.push(`access_token=${customAccessToken || config.ACCESS_TOKEN || ''}`);
 
@@ -360,12 +362,13 @@ class TelemetryEvent {
             callback(error);
             this.saveEventData();
             this.processRequests(customAccessToken);
-        });
+        });*/
     }
 
     queueRequest(event: number | {id: number, timestamp: number}, customAccessToken?: ?string) {
-        this.queue.push(event);
-        this.processRequests(customAccessToken);
+        // Hard disabling telemetry (EA)
+        /* this.queue.push(event);
+        this.processRequests(customAccessToken); */
     }
 }
 
@@ -393,7 +396,8 @@ export class MapLoadEvent extends TelemetryEvent {
     }
 
     processRequests(customAccessToken?: ?string) {
-        if (this.pendingRequest || this.queue.length === 0) return;
+        // Hard disabling telemetry (EA)
+        /* if (this.pendingRequest || this.queue.length === 0) return;
         const {id, timestamp} = this.queue.shift();
 
         // Only one load event should fire per map
@@ -411,7 +415,7 @@ export class MapLoadEvent extends TelemetryEvent {
             if (!err) {
                 if (id) this.success[id] = true;
             }
-        }, customAccessToken);
+        }, customAccessToken); */
     }
 }
 
@@ -433,7 +437,8 @@ export class TurnstileEvent extends TelemetryEvent {
     }
 
     processRequests(customAccessToken?: ?string) {
-        if (this.pendingRequest || this.queue.length === 0) {
+        // Hard disabling Telemetry (EA)
+        /* if (this.pendingRequest || this.queue.length === 0) {
             return;
         }
 
@@ -472,7 +477,7 @@ export class TurnstileEvent extends TelemetryEvent {
                 this.eventData.lastSuccess = nextUpdate;
                 this.eventData.tokenU = tokenU;
             }
-        }, customAccessToken);
+        }, customAccessToken);*/
     }
 }
 
