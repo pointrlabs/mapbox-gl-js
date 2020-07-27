@@ -1,5 +1,5 @@
 {
-  "name": "mapbox-gl",
+  "name": "@pointrlabs/mapbox-gl",
   "description": "A WebGL interactive maps library",
   "version": "1.11.1",
   "main": "dist/mapbox-gl.js",
@@ -7,7 +7,10 @@
   "license": "SEE LICENSE IN LICENSE.txt",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mapbox/mapbox-gl-js.git"
+    "url": "git://github.com/pointrlabs/mapbox-gl-js.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "engines": {
     "node": ">=6.4.0"
