@@ -16,12 +16,18 @@ Secondly, this allows us to make minor customizations as / when needed. At the m
 
 ## How to use this fork?
 
-1. Go to `github.com` and generate a personal key token
+1. Go to `github.com` and generate a personal key token with only 'write:packages' and 'read:packages' scopes.
 (https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
 
 2. Create `~/.npmrc` with the following content:
+on Mac/Linux
 ```
 //npm.pkg.github.com:/_authToken=TOKEN
+```
+
+on Windows
+```
+//npm.pkg.github.com/:_authToken=TOKEN
 ```
 
 (https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages)
