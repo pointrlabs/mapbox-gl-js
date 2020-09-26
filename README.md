@@ -20,12 +20,7 @@ Secondly, this allows us to make minor customizations as / when needed. At the m
 (https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
 
 2. Create `~/.npmrc` with the following content:
-on Mac/Linux
-```
-//npm.pkg.github.com:/_authToken=TOKEN
-```
-
-on Windows
+(Both Windows and Mac)
 ```
 //npm.pkg.github.com/:_authToken=TOKEN
 ```
